@@ -37,13 +37,16 @@ def play(songid, songposition):
     return response
 
 
-#if refresh
-
 def refresh():
-    songposition = get_currently_playing().json()["progress_ms"]
-    songid = get_currently_playing().json()["item"]["id"]
+    
+    if get_currently_playing() != None:
+        songposition = get_currently_playing().json()["progress_ms"]
+        songid = get_currently_playing().json()["item"]["id"]
 
-    play(songid, songposition)
+        play(songid, songposition)
+    else:
+        print('error')
+        return None
 
     return
 
