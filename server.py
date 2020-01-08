@@ -7,9 +7,11 @@ app = Flask(__name__) # instantiates a flask object in app keyword
 def index():
 	return render_template('/index.html')
 
-@app.route('/refresh', methods = ['POST'])
-def refresh():
-	return render_template('/index.html')
+@app.route('/sync', methods = ['POST'])
+def sync():
+    oauth1 = request.form['Player']
+    oauth2 = request.form['Listener']
+    return render_template('/index.html', data = refresh(oauth1, oauth2))
 
 if __name__ == '__main__':
     app.run(debug=True)
