@@ -14,21 +14,17 @@ headers = {'Content-Type': 'application/json',
 def get_currently_playing():
 
     response = requests.get(api_url_base+"/player/currently-playing", headers=headers)
-    
-    #base = json.dumps(response)
 
-    print(response.timestamp)
-    print(response.id)
+    #print(response.timestamp)
+    #print(response.id)
 
     if response.status_code == 200:
         return response
     else:
         return None
 
+print(get_currently_playing()["timestamp"])
 
-get_currently_playing()
-
-#print(get_currently_playing().text)
 
 
 def play():  
