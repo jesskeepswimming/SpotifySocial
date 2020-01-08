@@ -42,8 +42,11 @@ def refresh(oauth1, oauth2):
     if get_currently_playing(headers(oauth1)) != None:
         songposition = get_currently_playing(headers(oauth1)).json()["progress_ms"]
         songid = get_currently_playing(headers(oauth1)).json()["item"]["id"]
+        print(get_currently_playing(headers(oauth1)).text)
 
         play(songid, songposition, headers(oauth2))
+        
+        
         print('success')
 
     else:
@@ -52,7 +55,6 @@ def refresh(oauth1, oauth2):
 
     return
 
-#refresh()
 
 
 
