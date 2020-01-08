@@ -1,12 +1,26 @@
-
-
 <html>
     <head>
-        <title>Python is awesome!</title>
+        <title>Spotify Social</title>
     </head>
+
+    
     <body>
-        <h1>Afternerd</h1>
-        <p>{{ data.text }}</p>
-        <p>Congratulations! The HTTP Server is working!</p>
+        <h1>Spotify Social</h1>
+        <p>Refresh page to sync music stream! (may be a time delay based on network speed)</p>
+
+        
+
+        <form action="/refresh", method="POST">
+        Player Token:<br>
+        <input type="text" name="Player" value="">
+        <br>
+        Listener Token:<br>
+        <input type="text" name="Listener" value="">
+        <br><br>
+        <input type="submit" value="Sync">
+        </form> 
+
+        
+
     </body>
 </html>
