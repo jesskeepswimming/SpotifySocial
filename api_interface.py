@@ -18,6 +18,9 @@ def get_currently_playing():
     #print(response.timestamp)
     #print(response.id)
 
+    time=""
+    songid = ""
+
     if response.status_code == 200:
         return response
     else:
